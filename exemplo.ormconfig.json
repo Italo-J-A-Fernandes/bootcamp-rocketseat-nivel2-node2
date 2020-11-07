@@ -1,0 +1,8 @@
+{
+  "type": "type_database",
+	"host": "ip_machine_or_localhost",
+  "port": 5432,
+  "username": "name_user_database",
+  "password": "your_pass_database",
+  "database": "your_name_database"
+}
