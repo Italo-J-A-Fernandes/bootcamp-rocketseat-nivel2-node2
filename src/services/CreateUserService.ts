@@ -1,6 +1,7 @@
 import { getRepository } from 'typeorm';
 import { hash } from 'bcryptjs';
 
+import AppError from '../errors/AppError';
 import Users from '../models/Users';
 
 interface RequestDTO {
@@ -18,7 +19,7 @@ class CreateUserService {
     });
 
     if (checkUserExists) {
-      throw new Error('Emasil address already used.');
+      throw new AppError('Emasil address already used.');
     }
 
     const hashedPassord = await hash(password, 8);
